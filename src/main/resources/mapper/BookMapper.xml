@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qfedu.ssm.mapper.BookMapper">
+  <resultMap id="BaseResultMap" type="com.qfedu.ssm.entity.Book">
+    <!--@mbg.generated-->
+    <!--@Table book-->
+    <result column="bid" jdbcType="INTEGER" property="bid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="author" jdbcType="VARCHAR" property="author" />
+    <result column="publish" jdbcType="VARCHAR" property="publish" />
+    <result column="price" jdbcType="DOUBLE" property="price" />
+    <result column="crtTime" jdbcType="TIMESTAMP" property="crttime" />
+  </resultMap>
+  <insert id="insert" parameterType="com.qfedu.ssm.entity.Book">
+    <!--@mbg.generated-->
+    insert into book (bid, `name`, author, 
+      publish, price, crtTime
+      )
+    values (#{bid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}, 
+      #{publish,jdbcType=VARCHAR}, #{price,jdbcType=DOUBLE}, #{crttime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qfedu.ssm.entity.Book">
+    <!--@mbg.generated-->
+    insert into book
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="bid != null">
+        bid,
+      </if>
+      <if test="name != null">
+        `name`,
+      </if>
+      <if test="author != null">
+        author,
+      </if>
+      <if test="publish != null">
+        publish,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="crttime != null">
+        crtTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="bid != null">
+        #{bid,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null">
+        #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="publish != null">
+        #{publish,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DOUBLE},
+      </if>
+      <if test="crttime != null">
+        #{crttime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+
+
+  <select id="selectAllBook" resultMap="BaseResultMap">
+    select bid, `name`, author,publish, price, crtTime
+    from book
+
+  </select>
+</mapper>

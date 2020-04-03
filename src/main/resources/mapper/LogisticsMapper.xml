@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qfedu.ssm.mapper.LogisticsMapper">
+  <resultMap id="BaseResultMap" type="com.qfedu.ssm.entity.Logistics">
+    <!--@mbg.generated-->
+    <!--@Table logistics-->
+    <id column="lid" jdbcType="INTEGER" property="lid" />
+    <result column="account" jdbcType="VARCHAR" property="account" />
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="oid" jdbcType="VARCHAR" property="oid" />
+    <result column="pay_time" jdbcType="TIMESTAMP" property="payTime" />
+    <result column="package_time" jdbcType="TIMESTAMP" property="packageTime" />
+    <result column="begin_time" jdbcType="TIMESTAMP" property="beginTime" />
+    <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    lid, account, user_id, oid, pay_time, package_time, begin_time, end_time, `status`
+  </sql>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from logistics
+    where lid = #{lid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qfedu.ssm.entity.Logistics">
+    <!--@mbg.generated-->
+    insert into logistics (lid, account, user_id, 
+      oid, pay_time, package_time, 
+      begin_time, end_time, `status`
+      )
+    values (#{lid,jdbcType=INTEGER}, #{account,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, 
+      #{oid,jdbcType=VARCHAR}, #{payTime,jdbcType=TIMESTAMP}, #{packageTime,jdbcType=TIMESTAMP}, 
+      #{beginTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qfedu.ssm.entity.Logistics">
+    <!--@mbg.generated-->
+    insert into logistics
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="lid != null">
+        lid,
+      </if>
+      <if test="account != null">
+        account,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="oid != null">
+        oid,
+      </if>
+      <if test="payTime != null">
+        pay_time,
+      </if>
+      <if test="packageTime != null">
+        package_time,
+      </if>
+      <if test="beginTime != null">
+        begin_time,
+      </if>
+      <if test="endTime != null">
+        end_time,
+      </if>
+      <if test="status != null">
+        `status`,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="lid != null">
+        #{lid,jdbcType=INTEGER},
+      </if>
+      <if test="account != null">
+        #{account,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="oid != null">
+        #{oid,jdbcType=VARCHAR},
+      </if>
+      <if test="payTime != null">
+        #{payTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="packageTime != null">
+        #{packageTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="beginTime != null">
+        #{beginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null">
+        #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qfedu.ssm.entity.Logistics">
+    <!--@mbg.generated-->
+    update logistics
+    <set>
+      <if test="account != null">
+        account = #{account,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="oid != null">
+        oid = #{oid,jdbcType=VARCHAR},
+      </if>
+      <if test="payTime != null">
+        pay_time = #{payTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="packageTime != null">
+        package_time = #{packageTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="beginTime != null">
+        begin_time = #{beginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null">
+        end_time = #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        `status` = #{status,jdbcType=INTEGER},
+      </if>
+    </set>
+    where lid = #{lid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qfedu.ssm.entity.Logistics">
+    <!--@mbg.generated-->
+    update logistics
+    set account = #{account,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=VARCHAR},
+      oid = #{oid,jdbcType=VARCHAR},
+      pay_time = #{payTime,jdbcType=TIMESTAMP},
+      package_time = #{packageTime,jdbcType=TIMESTAMP},
+      begin_time = #{beginTime,jdbcType=TIMESTAMP},
+      end_time = #{endTime,jdbcType=TIMESTAMP},
+      `status` = #{status,jdbcType=INTEGER}
+    where lid = #{lid,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from logistics
+    where user_id=#{userId}
+  </select>
+</mapper>

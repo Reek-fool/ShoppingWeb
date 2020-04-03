@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qfedu.ssm.mapper.GoodTypeMapper">
+  <resultMap id="BaseResultMap" type="com.qfedu.ssm.entity.GoodType">
+    <!--@mbg.generated-->
+    <!--@Table good_type-->
+    <id column="gtid" jdbcType="INTEGER" property="gtid" />
+    <result column="gtname" jdbcType="VARCHAR" property="gtname" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    gtid, gtname
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from good_type
+    where gtid = #{gtid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from good_type
+    where gtid = #{gtid,jdbcType=INTEGER}
+  </delete>
+
+  <select id="queryAllByLimit" resultMap="BaseResultMap">
+    select
+    gtid, gtname
+    from supermarket.good_type
+    limit #{offset}, #{limit}
+  </select>
+
+  <insert id="insert" keyColumn="gtid" keyProperty="gtid" parameterType="com.qfedu.ssm.entity.GoodType" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into good_type (gtname)
+    values (#{gtname,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="gtid" keyProperty="gtid" parameterType="com.qfedu.ssm.entity.GoodType" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into good_type
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="gtname != null">
+        gtname,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="gtname != null">
+        #{gtname,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qfedu.ssm.entity.GoodType">
+    <!--@mbg.generated-->
+    update good_type
+    <set>
+      <if test="gtname != null">
+        gtname = #{gtname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where gtid = #{gtid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qfedu.ssm.entity.GoodType">
+    <!--@mbg.generated-->
+    update good_type
+    set gtname = #{gtname,jdbcType=VARCHAR}
+    where gtid = #{gtid,jdbcType=INTEGER}
+  </update>
+  <select id="queryById" resultMap="BaseResultMap">
+    select
+    gtid, gtname
+    from supermarket.good_type
+    where gtid = #{gtid}
+  </select>
+</mapper>

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MyBatisCodeHelperDatasource">
+    <option name="projectProfile">
+      <ProjectProfile>
+        <option name="javaMapperPackage" value="com.qfedu.ssm.mapper" />
+        <option name="javaMapperPath" value="$PROJECT_DIR$/src/main/java" />
+        <option name="javaModelPackage" value="com.qfedu.ssm.entity" />
+        <option name="javaModelPath" value="$PROJECT_DIR$/src/main/java" />
+        <option name="lastDatabaseCrudChooseModuleName" value="trainning" />
+        <option name="lombokAllArgConstructor" value="true" />
+        <option name="lombokDataAnnotation" value="true" />
+        <option name="lombokNoArgsConstructor" value="true" />
+        <option name="modelAddToString" value="true" />
+        <option name="moduleNameToPackageAndPathMap">
+          <map>
+            <entry key="trainning">
+              <value>
+                <UserPackageAndPathInfoByModule>
+                  <option name="javaMapperPackage" value="com.qfedu.ssm.mapper" />
+                  <option name="javaMapperPath" value="$PROJECT_DIR$/src/main/java" />
+                  <option name="javaModelPacakge" value="com.qfedu.ssm.entity" />
+                  <option name="javaModelPath" value="$PROJECT_DIR$/src/main/java" />
+                  <option name="javaServiceInterfacePath" value="$PROJECT_DIR$/src/main/java" />
+                  <option name="javaServicePath" value="$PROJECT_DIR$/src/main/java" />
+                  <option name="xmlPackage" value="mapper" />
+                  <option name="xmlPath" value="$PROJECT_DIR$/src/main/resources" />
+                </UserPackageAndPathInfoByModule>
+              </value>
+            </entry>
+          </map>
+        </option>
+        <option name="tableGenerateConfigs">
+          <map>
+            <entry key="nz1903:admin">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="Admin" />
+                  <option name="moduleName" value="trainning" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="nz1903:book">
+              <value>
+                <TableGenerateConfig>
+                  <option name="javaModelName" value="Book" />
+                  <option name="moduleName" value="trainning" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="supermarket:address">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="did" />
+                  <option name="javaModelName" value="Address" />
+                  <option name="moduleName" value="trainning" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="supermarket:cart">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="cid" />
+                  <option name="javaModelName" value="Cart" />
+                  <option name="moduleName" value="trainning" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="supermarket:citys">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="cid" />
+                  <option name="javaModelName" value="Citys" />
+                  <option name="moduleName" value="trainning" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="supermarket:courier">
+              <value>
+                <TableGenerateConfig>
+                  <option name="javaModelName" value="Courier" />
+                  <option name="moduleName" value="trainning" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="supermarket:emp_role">
+              <value>
+                <TableGenerateConfig>
+                  <option name="javaModelName" value="EmpRole" />
+                  <option name="moduleName" value="trainning" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="supermarket:employee">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="eid" />
+                  <option name="javaModelName" value="Employee" />
+                  <option name="moduleName" value="trainning" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="supermarket:evaluation">
+              <value>
+                <TableGenerateConfig>
+                  <option name="javaModelName" value="Evaluation" />
+                  <option name="moduleName" value="trainning" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="supermarket:fresh_goods">
+              <value>
+                <TableGenerateConfig>
+                  <option name="javaModelName" value="FreshGoods" />
+                  <option name="moduleName" value="trainning" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="supermarket:good_type">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="gtid" />
+                  <option name="javaModelName" value="GoodType" />
+                  <option name="moduleName" value="trainning" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="supermarket:logistics">
+              <value>
+                <TableGenerateConfig>
+                  <option name="javaModelName" value="Logistics" />
+                  <option name="moduleName" value="trainning" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="supermarket:order_detial">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="did" />
+                  <option name="javaModelName" value="OrderDetial" />
+                  <option name="moduleName" value="trainning" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="supermarket:orders">
+              <value>
+                <TableGenerateConfig>
+                  <option name="javaModelName" value="Orders" />
+                  <option name="moduleName" value="trainning" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="supermarket:permissions">
+              <value>
+                <TableGenerateConfig>
+                  <option name="javaModelName" value="Permissions" />
+                  <option name="moduleName" value="trainning" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="supermarket:province">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="pid" />
+                  <option name="javaModelName" value="Province" />
+                  <option name="moduleName" value="trainning" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="supermarket:role_perm">
+              <value>
+                <TableGenerateConfig>
+                  <option name="javaModelName" value="RolePerm" />
+                  <option name="moduleName" value="trainning" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="supermarket:roles">
+              <value>
+                <TableGenerateConfig>
+                  <option name="javaModelName" value="Roles" />
+                  <option name="moduleName" value="trainning" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="supermarket:township">
+              <value>
+                <TableGenerateConfig>
+                  <option name="javaModelName" value="Township" />
+                  <option name="moduleName" value="trainning" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="supermarket:users">
+              <value>
+                <TableGenerateConfig>
+                  <option name="javaModelName" value="Users" />
+                  <option name="moduleName" value="trainning" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+          </map>
+        </option>
+        <option name="xmlMapperPackage" value="mapper" />
+        <option name="xmlMapperPath" value="$PROJECT_DIR$/src/main/resources" />
+      </ProjectProfile>
+    </option>
+  </component>
+</project>

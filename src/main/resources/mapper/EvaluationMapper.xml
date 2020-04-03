@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qfedu.ssm.mapper.EvaluationMapper">
+  <resultMap id="BaseResultMap" type="com.qfedu.ssm.entity.Evaluation">
+    <!--@mbg.generated-->
+    <!--@Table evaluation-->
+    <id column="eid" jdbcType="INTEGER" property="eid" />
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="fdid" jdbcType="VARCHAR" property="fdid" />
+    <result column="detial" jdbcType="LONGVARCHAR" property="detial" />
+    <result column="grade" jdbcType="INTEGER" property="grade" />
+    <result column="eva_date" jdbcType="TIMESTAMP" property="evaDate" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    eid, user_id, fdid, detial, grade, eva_date
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from evaluation
+    where eid = #{eid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from evaluation
+    where eid = #{eid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qfedu.ssm.entity.Evaluation">
+    <!--@mbg.generated-->
+    insert into evaluation (eid, user_id, fdid, 
+      detial, grade, eva_date
+      )
+    values (#{eid,jdbcType=INTEGER}, #{userId,jdbcType=VARCHAR}, #{fdid,jdbcType=VARCHAR}, 
+      #{detial,jdbcType=LONGVARCHAR}, #{grade,jdbcType=INTEGER}, #{evaDate,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qfedu.ssm.entity.Evaluation">
+    <!--@mbg.generated-->
+    insert into evaluation
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="eid != null">
+        eid,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="fdid != null">
+        fdid,
+      </if>
+      <if test="detial != null">
+        detial,
+      </if>
+      <if test="grade != null">
+        grade,
+      </if>
+      <if test="evaDate != null">
+        eva_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="eid != null">
+        #{eid,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="fdid != null">
+        #{fdid,jdbcType=VARCHAR},
+      </if>
+      <if test="detial != null">
+        #{detial,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="grade != null">
+        #{grade,jdbcType=INTEGER},
+      </if>
+      <if test="evaDate != null">
+        #{evaDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qfedu.ssm.entity.Evaluation">
+    <!--@mbg.generated-->
+    update evaluation
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="fdid != null">
+        fdid = #{fdid,jdbcType=VARCHAR},
+      </if>
+      <if test="detial != null">
+        detial = #{detial,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="grade != null">
+        grade = #{grade,jdbcType=INTEGER},
+      </if>
+      <if test="evaDate != null">
+        eva_date = #{evaDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where eid = #{eid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qfedu.ssm.entity.Evaluation">
+    <!--@mbg.generated-->
+    update evaluation
+    set user_id = #{userId,jdbcType=VARCHAR},
+      fdid = #{fdid,jdbcType=VARCHAR},
+      detial = #{detial,jdbcType=LONGVARCHAR},
+      grade = #{grade,jdbcType=INTEGER},
+      eva_date = #{evaDate,jdbcType=TIMESTAMP}
+    where eid = #{eid,jdbcType=INTEGER}
+  </update>
+</mapper>

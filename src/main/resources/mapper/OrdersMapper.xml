@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qfedu.ssm.mapper.OrdersMapper">
+  <resultMap id="BaseResultMap" type="com.qfedu.ssm.entity.Orders">
+    <!--@mbg.generated-->
+    <!--@Table orders-->
+    <id column="oid" jdbcType="VARCHAR" property="oid" />
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="order_time" jdbcType="TIMESTAMP" property="orderTime" />
+    <result column="total_price" jdbcType="DOUBLE" property="totalPrice" />
+    <result column="order_status" jdbcType="INTEGER" property="orderStatus" />
+    <result column="pay_type" jdbcType="INTEGER" property="payType" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    oid, user_id, order_time, total_price, order_status, pay_type
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from orders
+    where oid = #{oid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <!--@mbg.generated-->
+    delete from orders
+    where oid = #{oid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.qfedu.ssm.entity.Orders">
+    <!--@mbg.generated-->
+    insert into orders (oid, user_id, order_time, 
+      total_price, order_status, pay_type
+      )
+    values (#{oid,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{orderTime,jdbcType=TIMESTAMP}, 
+      #{totalPrice,jdbcType=DOUBLE}, #{orderStatus,jdbcType=INTEGER}, #{payType,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qfedu.ssm.entity.Orders">
+    <!--@mbg.generated-->
+    insert into orders
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="oid != null">
+        oid,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="orderTime != null">
+        order_time,
+      </if>
+      <if test="totalPrice != null">
+        total_price,
+      </if>
+      <if test="orderStatus != null">
+        order_status,
+      </if>
+      <if test="payType != null">
+        pay_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="oid != null">
+        #{oid,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="orderTime != null">
+        #{orderTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="totalPrice != null">
+        #{totalPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="orderStatus != null">
+        #{orderStatus,jdbcType=INTEGER},
+      </if>
+      <if test="payType != null">
+        #{payType,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qfedu.ssm.entity.Orders">
+    <!--@mbg.generated-->
+    update orders
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="orderTime != null">
+        order_time = #{orderTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="totalPrice != null">
+        total_price = #{totalPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="orderStatus != null">
+        order_status = #{orderStatus,jdbcType=INTEGER},
+      </if>
+      <if test="payType != null">
+        pay_type = #{payType,jdbcType=INTEGER},
+      </if>
+    </set>
+    where oid = #{oid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qfedu.ssm.entity.Orders">
+    <!--@mbg.generated-->
+    update orders
+    set user_id = #{userId,jdbcType=VARCHAR},
+      order_time = #{orderTime,jdbcType=TIMESTAMP},
+      total_price = #{totalPrice,jdbcType=DOUBLE},
+      order_status = #{orderStatus,jdbcType=INTEGER},
+      pay_type = #{payType,jdbcType=INTEGER}
+    where oid = #{oid,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByUserID" resultType="java.lang.String">
+    select oid
+    from orders
+    where user_id=#{userId,jdbcType=VARCHAR}
+  </select>
+</mapper>

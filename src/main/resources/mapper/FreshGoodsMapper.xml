@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qfedu.ssm.mapper.FreshGoodsMapper">
+  <resultMap id="BaseResultMap" type="com.qfedu.ssm.entity.FreshGoods">
+    <!--@mbg.generated-->
+    <!--@Table fresh_goods-->
+    <id column="fdid" jdbcType="VARCHAR" property="fdid" />
+    <result column="good_name" jdbcType="VARCHAR" property="goodName" />
+    <result column="gtid" jdbcType="INTEGER" property="gtid" />
+    <result column="img" jdbcType="VARCHAR" property="img" />
+    <result column="price" jdbcType="DOUBLE" property="price" />
+    <result column="discount" jdbcType="INTEGER" property="discount" />
+    <result column="preference" jdbcType="INTEGER" property="preference" />
+    <result column="if_promotion" jdbcType="INTEGER" property="ifPromotion" />
+    <result column="last_sales" jdbcType="INTEGER" property="lastSales" />
+    <result column="current_sales" jdbcType="INTEGER" property="currentSales" />
+    <result column="count_sales" jdbcType="INTEGER" property="countSales" />
+    <result column="summery" jdbcType="VARCHAR" property="summery" />
+    <result column="attr1" jdbcType="VARCHAR" property="attr1" />
+    <result column="attr2" jdbcType="VARCHAR" property="attr2" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    fdid, good_name, gtid, img, price, discount, preference, if_promotion, last_sales, 
+    current_sales, count_sales, summery, attr1, attr2
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    fdid, good_name, gtid, img, price, discount, preference, if_promotion, last_sales,
+    current_sales, count_sales, summery
+    from fresh_goods
+    where fdid = #{fdid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <!--@mbg.generated-->
+    delete from fresh_goods
+    where fdid = #{fdid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.qfedu.ssm.entity.FreshGoods">
+    <!--@mbg.generated-->
+    insert into fresh_goods (fdid, good_name, gtid, 
+      img, price, discount, 
+      preference, if_promotion, last_sales, 
+      current_sales, count_sales, summery, 
+      attr1, attr2)
+    values (#{fdid,jdbcType=VARCHAR}, #{goodName,jdbcType=VARCHAR}, #{gtid,jdbcType=INTEGER}, 
+      #{img,jdbcType=VARCHAR}, #{price,jdbcType=DOUBLE}, #{discount,jdbcType=INTEGER}, 
+      #{preference,jdbcType=INTEGER}, #{ifPromotion,jdbcType=INTEGER}, #{lastSales,jdbcType=INTEGER}, 
+      #{currentSales,jdbcType=INTEGER}, #{countSales,jdbcType=INTEGER}, #{summery,jdbcType=VARCHAR}, 
+      #{attr1,jdbcType=VARCHAR}, #{attr2,jdbcType=VARCHAR})
+  </insert>
+  <select id="queryAllByLimit" resultMap="BaseResultMap">
+    select
+    fdid, good_name, gtid, img, price, discount, preference, if_promotion, last_sales, current_sales, count_sales, summery, attr1, attr2
+    from supermarket.fresh_goods
+    where gtid = #{gtid}
+    limit #{offset}, #{limit}
+  </select>
+  <insert id="insertSelective" parameterType="com.qfedu.ssm.entity.FreshGoods">
+    <!--@mbg.generated-->
+    insert into fresh_goods
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="fdid != null">
+        fdid,
+      </if>
+      <if test="goodName != null">
+        good_name,
+      </if>
+      <if test="gtid != null">
+        gtid,
+      </if>
+      <if test="img != null">
+        img,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="discount != null">
+        discount,
+      </if>
+      <if test="preference != null">
+        preference,
+      </if>
+      <if test="ifPromotion != null">
+        if_promotion,
+      </if>
+      <if test="lastSales != null">
+        last_sales,
+      </if>
+      <if test="currentSales != null">
+        current_sales,
+      </if>
+      <if test="countSales != null">
+        count_sales,
+      </if>
+      <if test="summery != null">
+        summery,
+      </if>
+      <if test="attr1 != null">
+        attr1,
+      </if>
+      <if test="attr2 != null">
+        attr2,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="fdid != null">
+        #{fdid,jdbcType=VARCHAR},
+      </if>
+      <if test="goodName != null">
+        #{goodName,jdbcType=VARCHAR},
+      </if>
+      <if test="gtid != null">
+        #{gtid,jdbcType=INTEGER},
+      </if>
+      <if test="img != null">
+        #{img,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DOUBLE},
+      </if>
+      <if test="discount != null">
+        #{discount,jdbcType=INTEGER},
+      </if>
+      <if test="preference != null">
+        #{preference,jdbcType=INTEGER},
+      </if>
+      <if test="ifPromotion != null">
+        #{ifPromotion,jdbcType=INTEGER},
+      </if>
+      <if test="lastSales != null">
+        #{lastSales,jdbcType=INTEGER},
+      </if>
+      <if test="currentSales != null">
+        #{currentSales,jdbcType=INTEGER},
+      </if>
+      <if test="countSales != null">
+        #{countSales,jdbcType=INTEGER},
+      </if>
+      <if test="summery != null">
+        #{summery,jdbcType=VARCHAR},
+      </if>
+      <if test="attr1 != null">
+        #{attr1,jdbcType=VARCHAR},
+      </if>
+      <if test="attr2 != null">
+        #{attr2,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qfedu.ssm.entity.FreshGoods">
+    <!--@mbg.generated-->
+    update fresh_goods
+    <set>
+      <if test="goodName != null">
+        good_name = #{goodName,jdbcType=VARCHAR},
+      </if>
+      <if test="gtid != null">
+        gtid = #{gtid,jdbcType=INTEGER},
+      </if>
+      <if test="img != null">
+        img = #{img,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=DOUBLE},
+      </if>
+      <if test="discount != null">
+        discount = #{discount,jdbcType=INTEGER},
+      </if>
+      <if test="preference != null">
+        preference = #{preference,jdbcType=INTEGER},
+      </if>
+      <if test="ifPromotion != null">
+        if_promotion = #{ifPromotion,jdbcType=INTEGER},
+      </if>
+      <if test="lastSales != null">
+        last_sales = #{lastSales,jdbcType=INTEGER},
+      </if>
+      <if test="currentSales != null">
+        current_sales = #{currentSales,jdbcType=INTEGER},
+      </if>
+      <if test="countSales != null">
+        count_sales = #{countSales,jdbcType=INTEGER},
+      </if>
+      <if test="summery != null">
+        summery = #{summery,jdbcType=VARCHAR},
+      </if>
+      <if test="attr1 != null">
+        attr1 = #{attr1,jdbcType=VARCHAR},
+      </if>
+      <if test="attr2 != null">
+        attr2 = #{attr2,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where fdid = #{fdid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qfedu.ssm.entity.FreshGoods">
+    <!--@mbg.generated-->
+    update fresh_goods
+    set good_name = #{goodName,jdbcType=VARCHAR},
+      gtid = #{gtid,jdbcType=INTEGER},
+      img = #{img,jdbcType=VARCHAR},
+      price = #{price,jdbcType=DOUBLE},
+      discount = #{discount,jdbcType=INTEGER},
+      preference = #{preference,jdbcType=INTEGER},
+      if_promotion = #{ifPromotion,jdbcType=INTEGER},
+      last_sales = #{lastSales,jdbcType=INTEGER},
+      current_sales = #{currentSales,jdbcType=INTEGER},
+      count_sales = #{countSales,jdbcType=INTEGER},
+      summery = #{summery,jdbcType=VARCHAR},
+      attr1 = #{attr1,jdbcType=VARCHAR},
+      attr2 = #{attr2,jdbcType=VARCHAR}
+    where fdid = #{fdid,jdbcType=VARCHAR}
+  </update>
+    <select id="selectByfdids" resultMap="BaseResultMap">
+      select
+      fdid, good_name, gtid, img, price, discount, preference, if_promotion, last_sales,
+      current_sales, count_sales, summery
+      from fresh_goods
+      <where>
+        fdid in
+        <foreach collection="fdids" item="fdid" index="index" open="(" close=")" separator=",">
+          #{fdid}
+        </foreach>
+      </where>
+
+    </select>
+    <select id="selectGtidCount" resultType="int">
+      select count(1)
+      from fresh_goods
+      where gtid=#{gtid,jdbcType=INTEGER}
+    </select>
+  <select id="selectSerchCount" resultType="int">
+    select count(1)
+    from fresh_goods
+    where good_name like '%${search}%'
+  </select>
+  <select id="querySearchByLimit" resultMap="BaseResultMap">
+    select
+    fdid, good_name, gtid, img, price, discount, preference, if_promotion, last_sales, current_sales, count_sales, summery, attr1, attr2
+    from supermarket.fresh_goods
+    where good_name like '%${search}%'
+    limit #{offset}, #{limit}
+  </select>
+</mapper>

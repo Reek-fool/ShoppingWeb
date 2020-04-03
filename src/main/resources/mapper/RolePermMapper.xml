@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qfedu.ssm.mapper.RolePermMapper">
+  <resultMap id="BaseResultMap" type="com.qfedu.ssm.entity.RolePerm">
+    <!--@mbg.generated-->
+    <!--@Table role_perm-->
+    <id column="rid" jdbcType="INTEGER" property="rid" />
+    <id column="pid" jdbcType="INTEGER" property="pid" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="map">
+    <!--@mbg.generated-->
+    delete from role_perm
+    where rid = #{rid,jdbcType=INTEGER}
+      and pid = #{pid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qfedu.ssm.entity.RolePerm">
+    <!--@mbg.generated-->
+    insert into role_perm (rid, pid)
+    values (#{rid,jdbcType=INTEGER}, #{pid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qfedu.ssm.entity.RolePerm">
+    <!--@mbg.generated-->
+    insert into role_perm
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="rid != null">
+        rid,
+      </if>
+      <if test="pid != null">
+        pid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="rid != null">
+        #{rid,jdbcType=INTEGER},
+      </if>
+      <if test="pid != null">
+        #{pid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>
